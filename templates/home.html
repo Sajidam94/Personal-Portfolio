@@ -1,0 +1,402 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{info.name}}</title>
+	<meta name="description" content="Sajid - Personal Portfolio" />
+	<meta name="keywords" content="blog, business card, creative, creative portfolio, cv theme, online resume, personal, portfolio, professional cv, responsive portfolio, resume, resume theme, vcard" />
+	<meta name="author" content="beingeorge" />
+	<meta name="theme-color" content="#2a2d35">
+
+	<!-- Vendor Css-->
+	<link rel="stylesheet" href="{% static 'assets/css/vendor.css' %}" />	
+
+	<!-- HammaTemplate style Css -->
+	<!-- <link href="assets/css/hamma-light.css" rel="stylesheet"> -->
+	<link href="{% static 'assets/css/hamma-dark.css'%}" rel="stylesheet">
+
+	<!-- Custom style Css -->
+	<link href="{% static 'assets/css/custom.css' %}" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+
+	<!-- START: Preloader -->
+	<div id="preloader" class="preloader">
+
+		<div class="spinner-grow text-dark" role="status">
+			<span class="sr-only">Loading...</span>
+		</div>
+	</div>
+	<!-- END: Preloader -->
+
+	<!-- START: Back-to-top -->
+	<div class="scroll-up">
+		<a href="#home" id="scroll-up"><i class="fas fa-chevron-up"></i></a>
+	</div>
+	<!-- END: Back-to-top -->
+
+
+	<nav class="navbar navbar-expand-lg navbar-custom navbar-light fixed-top">
+		<div class="container">
+
+			<a class="navbar-brand  mr-auto " href="index.html">Sajid
+				<!-- <img src="assets/images/logo.png" alt="Logo"> -->
+			</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+				<svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="60"><path
+				        class="line top"
+				        d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" /><path
+				        class="line middle"
+				        d="m 30,50 h 40" /><path
+				        class="line bottom"
+				        d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" /></svg>
+			</button>
+
+
+
+			<div class="collapse navbar-collapse" id="navbarToggler">
+				<ul class="navbar-nav ml-auto">
+					<li><a class="nav-link active" href="#home">home</a></li>
+					<li><a class="nav-link" href="#about">About</a></li>
+					<li><a class="nav-link" href="#services">Service</a></li>
+					<li><a class="nav-link" href="#resume">EXPERTISES</a></li>
+					<li><a class="nav-link" href="#work">Works</a></li>
+					<li><a class="nav-link" href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="page-wrapper">
+		<!-- START: HOME -->		
+		<section class="section-home " id="home">
+			<div class="cursor"></div>
+			<div class="dot"></div>
+			
+			<div id="overlay" class="overlay d-flex justify-content-center align-items-center">
+				<div class="home-banner" data-url="{{info.banner_image.url}}"></div>
+				<div class="overlay-wrap text-center">
+	    			<span class="mb-4 text-uppercase">Hello, I am</span>
+	 	   			<h1 class="text-uppercase">{{info.name}}</h1>
+		   			</div>
+		   		</div>
+		   		
+		</section>	
+		<!-- END: HOME -->
+
+		<!-- START: ABOUT -->
+		<section class="section section-light" id="about">
+			<div class="container">
+				<div class="section-head wow-no fadeIn">
+					<span>Get to know</span>
+					<h2>About Me</h2>
+				</div>
+
+				<div class="row justify-content-center align-items-center">
+					<div class="col-md-5">
+						<img class="img-fluid img-thumbnail wow-no fadeInUp" data-wow-no-duration="1s" src="{{info.profile_image.url}}" alt="About Picture">
+					</div>
+					<div class="col-md-7">
+						<div class="about-desc wow-no fadeInUp" data-wow-no-duration="1s"  data-wow-no-delay="500ms">
+							<div class="about-desc-content">
+								<h1 class="font-weight-light">I'm {{info.name}}</h1>
+								<p class="mt-3 font-weight-light">{{ info.summary }}</p>
+							</div>
+
+							<div class="about-desc-more text-left b-box mt-3">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="about-desc-info">
+											<b>From :</b>
+											<span>{{info.location}}</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="about-desc-info">
+											<b>Age :</b>
+											<span>{{info.age}}</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="about-desc-info">
+											<b>Phone :</b>
+											<a href="tel:{{info.contact_no}}">{{info.contact_no}}</a>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="about-desc-info">
+											<b>Email :</b>
+											<a href="mailto:{{info.email}}">{{info.email}}</a>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+
+							<ul class="about-social mb-0 list-inline mt-4">
+								<ul class="list-unstyled list-inline">
+			                        <li class="list-inline-item"><a class="hover-state" href="{{info.facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+			                        <li class="list-inline-item"><a class="hover-state" href="{{info.linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+			                        <li class="list-inline-item"><a class="hover-state" href="{{info.github}}"><i class="fab fa-github"></i></a></li>
+			                    </ul>
+							</ul> 
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- END: ABOUT -->
+
+		<!-- START: SERVICES -->
+		<section class="section section-services section-dark" id="services">
+			<div class="container">
+				<div class="section-head wow-no fadeIn">
+					<span>WHAT I DO</span>
+					<h2>My Services</h2>
+				</div>
+
+				<div class="row mt-4">
+				{% for service in services %}
+					<div class="col-sm-6 col-md-4">
+						<div class="services-flip wow-no fadeInUp" data-wow-no-duration="1.5s">
+							<div class="services-list">
+								<div class="services-list-front" style="background-image: url({{service.image.url}})">
+									<div class="flip-content">
+										<h5 class="mb-0">{{service.title}}</h5>
+									</div>
+								</div>
+								<div class="services-list-back">
+									<div class="flip-content">
+										<div class="mt-4">
+											<h5 class="mb-0">{{service.title}}</h5>
+											<p class=" mt-3">{{service.description}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}					
+				</div>
+			</div>
+		</section>
+		<!-- END: SERVICES -->
+
+		<!-- START: RESUME -->
+		<section class="section section-light section-resume" id="resume">
+			<div class="container">
+				<div class="section-head wow-no fadeIn">
+					<span>My Resume</span>
+					<h2>My Expertises</h2>
+				</div>
+
+				<div class="row mt-4">
+					<div class="col-sm-6 col-lg-6">
+						<h5 class="section-subHead mt-3"> My Education</h5>
+						<div class="resume-list b-box hover-state p-4 mt-4 wow-no fadeInUp" data-wow-no-duration="1.5s">
+							{% for edu in education %}
+							<div>
+								<h5>{{edu.degree}}</h5>
+								<h6 class="badge badge-dark d-inline-block my-3">{{edu.duration}}</h6>
+								<p>{{edu.academy}}</p>
+							</div>
+							{% endfor %}							
+						</div>
+						<div class="row">
+								<div class="col-lg-12 mt-4 mb-5  wow-no fadeInUp" data-wow-no-duration="1.5s" data-wow-no-delay=".5s">
+									<a href="https://drive.google.com/file/d/12QdlLbRy_8MSoKfTbCHD2KiJC65inKBH/view?usp=sharing" class="btn hover-state">My Resume</a>
+								</div>
+							</div>
+					</div>
+					<div class="col-sm-6 col-lg-6">
+						<h5 class="section-subHead mt-3"> My Skills</h5>
+						<div class="resume-panel b-box hover-state p-4 mt-3">
+						{% for skill in skills %}
+							<div class="mb-4 pb-2 wow-no fadeInUp"  data-wow-no-duration="1.5s">
+								<h6>{{skill.title}}</h6>
+								<div class="progress mt-2" style="height: 7px;">
+									<div class="progress-bar" role="progressbar" style="width: {{skill.progress}}%;" aria-valuenow="{{skill.progress}}" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+				</div>
+						
+			</div>
+		</section>
+		<!-- END: RESUME -->
+
+		<!--START: WORK -->   
+		<section class="section section-work section-dark" id="work">
+			<div class="container">
+				<div class="section-head text-center wow-no fadeIn">
+					<span>Portfolio</span>
+					<h2>My Works</h2>
+				</div>
+			</div>
+			<div class="container swiper-container swiper-portfolio wow-no fadeInUp" data-wow-no-duration="1.5s">
+				<div class=" swiper-wrapper">
+				{% for project in projects  %}
+					<div class="portfolio-item swiper-slide " data-groups="all slideshow">
+						<a href="{{ project.image.url }}" class="portfolio-item--content simple-ajax-popup">
+							<div class="portfolio-item--img b-box">
+								<img src="{{ project.image.url }}" class="img-fluid mx-auto" alt="work-img">
+							</div>
+							<div class="portfolio-item--desc d-flex justify-content-center align-items-center">
+								<div class="portfolio-item--desc-in">
+									<h3 class="mb-2 text-white">{{ project.title }}</h3>
+									<p class="text-white">{{ project.description }}</p>
+									{% if project.source_code_link %}
+									<button class="btn hover-state mt-2" onclick="window.location.href = '{{project.source_code_link}}';">Github Link</button><br>
+									{% endif %}
+									{% if project.live_link %}
+									<button class="btn hover-state mt-2" onclick="window.location.href = '{{project.live_link}}';">Live Link</button>
+									{% endif %}
+								</div>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+				</div>
+				<div class="portfolio-pagination">
+					
+				</div>
+			</div>
+		</section>
+		<!--END: WORK -->
+
+
+
+		<!-- START: CONTACT -->
+		<section class="section section-dark section-contact" id="contact">
+			<div class="container">
+				<div class="section-head wow-no fadeIn">
+					<span>say Hello</span>
+					<h2>Contact </h2>
+				</div>
+			</div>
+
+			<div class="contact-Otherdetails">
+				<div class="container">
+					<div class="contact-details">
+						<h5 class="section-subHead pt-5 mb-4"> Get in Touch</h5>
+						<div class="row">
+							<div class="col-md-4 col-lg-4">
+								<div class="contact-details--panel p-4 b-box text-center hover-state wow-no fadeInUp" data-wow-no-duration="1.5s">
+									<div class="mb-4">
+										<i class="fas fa-map-marked-alt"></i>
+									</div>
+									<div class="mt-2">
+										<a href="#" class="">{{info.location}}</a>
+										<p class="mt-1">Address</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4">
+								<div class="contact-details--panel p-4 b-box text-center hover-state wow-no fadeInUp" data-wow-no-duration="1.5s">
+									<div class="mb-4">
+										<i class="fas fa-mobile-alt  "></i>
+									</div>
+									<div class="mt-2">
+										<a href="tel:{{info.contact_no}}" class="">{{info.contact_no}}</a>
+										<p class="mt-1">Call Us</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4">
+								<div class="contact-details--panel p-4 b-box text-center hover-state wow-no fadeInUp" data-wow-no-duration="1.5s" data-wow-no-delay=".2s">
+									<div class="mb-4">
+										<i class="fas fa-envelope  "></i>
+									</div>
+									<div class="mt-2">
+										<a href="mailto:{{info.email}}">{{info.email}}</a>
+										<p class="mt-1">Email Us</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="contact-form mt-5">
+						<form method='post' action='.'>
+						{% csrf_token %}
+
+							<h5 class="section-subHead mb-2"> Contact Form</h5>
+							<div class="row">							
+								<div class="col-lg-6">
+									<div class="form-group mt-3 wow-no fadeInUp" data-wow-no-duration="1.5s">
+										{% comment %} <input name="name" id="name" type="text" class="form-control b-box" placeholder="Your Name*" required> {% endcomment %}
+										{{form.name}}
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group mt-3 wow-no fadeInUp" data-wow-no-duration="1.5s" data-wow-no-delay=".2s">
+										{% comment %} <input name="email" id="email" type="email" class="form-control b-box" placeholder="Your Email*" required> {% endcomment %}
+										{{form.email}}
+									</div>
+								</div>                                
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group mt-3 wow-no fadeInUp" data-wow-no-duration="1.5s" data-wow-no-delay=".3s">
+										{% comment %} <input type="text" class="form-control b-box" id="subject" placeholder="Your Subject.." required/> {% endcomment %}
+										{{form.subject}}
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group mt-3 wow-no fadeInUp" data-wow-no-duration="1.5s" data-wow-no-delay=".4s">
+										{% comment %} <textarea name="comments" id="comments" rows="4" class="form-control b-box" placeholder="Your message..."></textarea> {% endcomment %}
+										{{form.comments}}
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12 text-center mt-4 mb-5  wow-no fadeInUp" data-wow-no-duration="1.5s" data-wow-no-delay=".5s">
+									<button type="submit" class="btn hover-state">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END: CONTACT -->
+
+		<!--START: FOOTER-->
+		<footer class="footer section section-light">
+			<div class="container">
+				<p class="copyright text-center mb-0">&copy; Sajid 2019 | All Right Reserved</p>
+			</div>
+		</footer>
+		<!--END: FOOTER-->
+
+	</div>
+
+	<!-- JAVASCRIPTS -->
+
+	<script src="{% static 'assets/js/vendor.js'%}"></script>
+
+	<!-- Map -->
+	<script src="{% static 'assets/js/map.js'%}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD79MY72taVRlZVX2DU6L5PXOh3ezUUKMc&amp;callback=initMap" async="" defer=""></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+	<!-- Aside Section Init -->
+	<script src="{% static 'assets/js/hover-effect.umd.js'%}"></script>
+	<script src="{% static 'assets/js/init-aside.js'%}"></script>
+	
+	<!-- Custom Js -->
+	<script src="{% static 'assets/js/custom.js'%}"></script>
+</body>
+</html>
