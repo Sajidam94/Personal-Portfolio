@@ -25,13 +25,12 @@ class Information(models.Model):
     dob = models.DateField(verbose_name='Date of birth')
     location = models.CharField(max_length=30)
     summary = models.TextField()
+    resume_link = models.CharField(max_length=300, null=True, blank=True)
     facebook = models.CharField(max_length=50)
     linkedin = models.CharField(max_length=50)
     github = models.CharField(max_length=50)
-    banner_image = models.ImageField(
-        upload_to='banner_image', null=True, blank=True)
-    profile_image = models.ImageField(
-        upload_to='profile_image', null=True, blank=True)
+    banner_image = models.CharField(max_length=100)
+    profile_image = models.CharField(max_length=100)
 
     def save(self, *args, **kwargs):
         self.id = 1
@@ -74,7 +73,7 @@ class Contact(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='product_image')
+    image = models.CharField(max_length=100)
     description = models.TextField()
     source_code_link = models.CharField(max_length=200, null=True, blank=True)
     live_link = models.CharField(max_length=200, null=True, blank=True)
@@ -86,8 +85,7 @@ class Project(models.Model):
 class Services(models.Model):
     title = models.CharField(max_length=30)
     description = models.TextField()
-    image = models.ImageField(
-        upload_to='service_image', null=True, blank=True)
+    image = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title

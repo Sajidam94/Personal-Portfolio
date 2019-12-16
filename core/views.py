@@ -37,8 +37,9 @@ class HomeView(View):
             return render(self.request, "home.html", context)
         except ObjectDoesNotExist:
             messages.info(self.request, "Object not Found.")
+            return render(self.request, "home.html")
         except ValueError:
-             return redirect('/')
+             return render(self.request, "home.html")
 
     def post(self, *args, **kwargs):
         form = ContactForm(self.request.POST or None)
@@ -59,4 +60,6 @@ class HomeView(View):
             return redirect('/')
 
         except ObjectDoesNotExist:
-            return redirect('/')
+            return render(self.request, "home.html")
+        except ValueError:
+            return render(self.request, "home.html")
